@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+datasets
+pyyaml
+nltk
+opencv-python
+pytesseract
+pillow
+fastapi
+uvicorn
+joblib
+matplotlib
+seaborn
+tqdm

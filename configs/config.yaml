@@ -1,0 +1,27 @@
+data_ingestion:
+  dataset_name: "ag_news"
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+
+data_validation:
+  required_columns:
+    - text
+    - label
+
+
+data_transformation:
+  max_features: 10000
+  ngram_range: [1,2]
+
+model_trainer:
+  models:
+    - naive_bayes
+    - logistic_regression
+    - svm
+
+model_evaluation:
+  metric: "accuracy"
+  target_score: 0.95
+
+prediction:
+  confidence_threshold: 0.6
