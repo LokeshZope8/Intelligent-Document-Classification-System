@@ -18,6 +18,7 @@ class DataIngestion:
 
             self.dataset_name = config["data_ingestion"]["dataset_name"]
             self.raw_data_dir = config["data_ingestion"]["raw_data_dir"]
+            self.interim_data_dir = config["data_ingestion"]["interim_data_dir"]
 
         except Exception as e:
             raise CustomException(e, sys)
@@ -32,9 +33,9 @@ class DataIngestion:
 
             df = dataset["train"].to_pandas()
 
-            os.makedirs(self.raw_data_dir, exist_ok=True)
+            os.makedirs(self.interim_data_dir, exist_ok=True)
 
-            output_path = os.path.join(self.raw_data_dir, "invoice_dataset.csv")
+            output_path = os.path.join(self.interim_data_dir, "invoice_dataset.csv")
 
             df.to_csv(output_path, index=False)
 
